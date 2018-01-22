@@ -17,6 +17,11 @@ fn count_doubles(_py: Python, val: &str) -> PyResult<u64> {
     Ok(total)
 }
 
+fn count_doubles_func(_py: Python, val: &str) -> PyResult<u64> {
+    let mut c = val.bytes().next().unwrap();
+    Ok(val.bytes().fold(0,|sum, i|if  i == c {c = i; sum + 1} else {c = i; sum})-1)
+}
+
 fn count_doubles_once(_py: Python, val: &str) -> PyResult<u64> {
     let mut total = 0u64;
 
@@ -115,6 +120,7 @@ py_module_initializer!(libmyrustlib, initlibmyrustlib, PyInit_myrustlib, |py, m 
     try!(m.add(py, "count_doubles_peek", py_fn!(py, count_doubles_peek(val: &str))));
     try!(m.add(py, "count_doubles_memreplace", py_fn!(py, count_doubles_memreplace(val: &str))));
     try!(m.add(py, "count_doubles_fold", py_fn!(py, count_doubles_fold(val: &str))));
+    try!(m.add(py, "count_doubles_func", py_fn!(py, count_doubles_func(val: &str))));
     // try!(m.add(py, "count_doubles_regex", py_fn!(py, count_doubles_regex(val: &str))));
     Ok(())
 });
