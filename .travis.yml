@@ -1,6 +1,12 @@
 language: python
+
+cache: pip
+
 language: rust
+
 language: C
+compiler: swig
+
 script: 
 - make compile-c
 - make compile-rust
