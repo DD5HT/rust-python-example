@@ -1,5 +1,6 @@
 language: python
-
+language: rust
+language: C
 script: 
 - make compile-c
 - make compile-rust
