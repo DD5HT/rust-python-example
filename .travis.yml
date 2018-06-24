@@ -2,10 +2,11 @@ matrix:
   include:
     - language: python
       python: 3.6
+      script: make test-python
 
     - language: C
       compiler: swig
-      script: make c-compile
+      script: make compile-c
 
     - language: rust
-      script: make rust-compile
+      script: make compile-rust
