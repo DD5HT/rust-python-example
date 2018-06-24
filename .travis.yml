@@ -2,6 +2,7 @@ matrix:
   include:
     - language: python
       python: 3.6
+      cache: pip
       script: make test-python
 
     - language: C
@@ -9,4 +10,5 @@ matrix:
       script: make compile-c
 
     - language: rust
+      cache: cargo
       script: make compile-rust
