@@ -1,13 +1,11 @@
-language: python
+matrix:
+  include:
+    - language: python
+      python: 3.6
 
-cache: pip
+    - language: C
+      compiler: swig
+      script: make c-compile
 
-language: rust
-
-language: C
-compiler: swig
-
-script: 
-- make compile-c
-- make compile-rust
-
+    - language: rust
+      script: make rust-compile
