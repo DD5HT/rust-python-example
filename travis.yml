@@ -1,0 +1,8 @@
+language: rust
+language: python
+langugae: C
+
+script: 
+- make compile-c
+- make compile-rust
+

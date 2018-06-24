@@ -1,4 +1,5 @@
 # Speed up your Python using Rust
+[![Build Status](https://travis-ci.org/DD5HT/rust-python-example.svg?branch=master)](https://travis-ci.org/DD5HT/rust-python-example)
 
 ![Rust](https://www.rust-lang.org/logos/rust-logo-blk.svg)
 
